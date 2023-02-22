@@ -1,24 +1,17 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @restaurant.name %></h1>
+<h2>Address: <%=  @restaurant.address%></h2>
+<h3>Category: <%= @restaurant.category %></h3>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+<%= link_to 'Reviews', restaurant_reviews_path(@restaurant) %>
 
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @restaurant.phone_number %>
-</p>
+<!-- <%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content, placeholder: "Write your review here" %>
+  <%= f.input :rating, placeholder: "Add a rating (1-5)" %>
+  <%= f.submit "Add a review", class: "btn btn-primary" %>
+<% end %> -->
 
-<p>
-  <strong>Category:</strong>
-  <%= @restaurant.category %>
-</p>
+<br>
+<br>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%= render 'reviews/form' %>

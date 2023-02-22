@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
     before_action :set_restaurant, only: [:new, :create]
   
+    def index
+      @reviews = Review.where(restaurant_id: @restaurant)
+    end
+
     def new
       @restaurant = Restaurant.find(params[:restaurant_id])
       @review = Review.new
@@ -17,12 +21,10 @@ class ReviewsController < ApplicationController
     end
   
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
       @restaurant = Restaurant.find(params[:restaurant_id])
     end
   
-    # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
       params.require(:review).permit(:content, :rating)
     end
