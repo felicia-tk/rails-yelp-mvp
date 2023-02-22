@@ -11,15 +11,15 @@ Restaurant.destroy_all
 puts 'Creating restaurants...'
 restaurants_attributes = [
   {
-    name:         'Dishoom',
-    address:      '7 Boundary St, London E2 7JE',
-    phone_number:  '06 07 08 09 01',
-    category:        "french"
+    name:         'WEI TO GO Pererenan',
+    address:      'Jl. Sempol No.26',
+    phone_number:  '0813 0000 0000',
+    category:        "chinese"
   },
   {
-    name:         'Pizza East',
-    address:      '56A Shoreditch High St, London E1 6PQ',
-    phone_number:  '06 07 08 09 02',
+    name:         'Bottega Italiana',
+    address:      'Jl. Pantai Batu Bolong no.77',
+    phone_number:  '0815 0000 0000',
     category:        "italian"
   }
 ]
